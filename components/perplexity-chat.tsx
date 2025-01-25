@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,7 +8,6 @@ export function PerplexityChat() {
   const [response, setResponse] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  // @ts-ignore
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!query.trim()) return
