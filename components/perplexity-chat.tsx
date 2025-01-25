@@ -10,7 +10,8 @@ export function PerplexityChat() {
   const [response, setResponse] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = async (e) => {
+  // @ts-ignore
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!query.trim()) return
 
@@ -33,17 +34,10 @@ export function PerplexityChat() {
 
   return (
     <div className="flex flex-col h-full bg-black relative">
-      {/* 
-        1) Adicionamos pointer-events-none no container absoluto (z-0).
-        2) Mantemos pointer-events-auto especificamente nos links, 
-           para torná-los clicáveis mesmo em um pai com pointer-events-none. 
-      */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none">
         <div className="text-center opacity-30">
-          {/* Destaque: IAnovar Ative o Futuro */}
           <h1 className="text-white text-3xl font-bold mb-1">IAnovar</h1>
           <p className="text-white text-xl mb-4">Ative o Futuro</p>
-          {/* Link abaixo de "Ative o Futuro" para https://vemia.com.br */}
           <a
             href="https://vemia.com.br"
             target="_blank"
@@ -89,4 +83,3 @@ export function PerplexityChat() {
     </div>
   )
 }
-
